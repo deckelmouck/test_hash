@@ -43,7 +43,7 @@ namespace test_hash
         private static void tryIt(string text)
         {
             string saltSolution = "";
-            string puzzleStart = "ab";
+            string puzzleStart = "000";
             int count = 1;
             Stopwatch watch = new Stopwatch();
             watch.Start();
@@ -77,7 +77,7 @@ namespace test_hash
                     else if ((count % 100000) == 0)
                     {
                         timeSpan = watch.Elapsed;
-                        Console.Clear();
+                        //Console.Clear();
                         Console.WriteLine($"Try: {count} - Seconds running: {timeSpan.TotalSeconds.ToString()}");
                     }
                     //count++;
