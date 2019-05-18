@@ -43,7 +43,8 @@ namespace test_hash
         private static void tryIt(string text)
         {
             string saltSolution = "";
-            string puzzleStart = "000";
+            string puzzleStart = "00000";
+            int puzzleLenght = puzzleStart.Length;
             int count = 1;
             Stopwatch watch = new Stopwatch();
             watch.Start();
@@ -60,7 +61,7 @@ namespace test_hash
                     string hashSolution = getHash(text, saltSolution);
                     //listUsedSalts.Add(saltSolution);
 
-                    if (hashSolution.Substring(0, 2) == puzzleStart)
+                    if (hashSolution.Substring(0, puzzleLenght) == puzzleStart)
                     {
                         timeSpan = watch.Elapsed;
                         Console.WriteLine($"Solution found! - Seconds needed: {timeSpan.TotalSeconds.ToString()}");
