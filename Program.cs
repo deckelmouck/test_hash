@@ -8,10 +8,16 @@ namespace test_hash
 {
     class Program
     {
+        private static string text2hash = "";
+        private static string puzzleStart = "0";
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            string text2hash = Console.ReadLine();
+            Console.WriteLine("hash test with puzzle");
+            Console.WriteLine("Please enter a value to puzzle the hash");
+            puzzleStart = Console.ReadLine();
+            Console.WriteLine("Please enter something to hash and confirm with enter");
+            text2hash = Console.ReadLine();
             tryIt(text2hash);
             Console.ReadLine();
         }
@@ -43,7 +49,7 @@ namespace test_hash
         private static void tryIt(string text)
         {
             string saltSolution = "";
-            string puzzleStart = "00000";
+            //string puzzleStart = "00000";
             int puzzleLenght = puzzleStart.Length;
             int count = 1;
             Stopwatch watch = new Stopwatch();
